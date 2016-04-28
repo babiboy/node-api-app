@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data input</title>
+</head>
+<body>
+    <h1>Data Input</h1>
+    <section class="insert">
+        <h3>Insert Data</h3>
+        <form action="/insert" method="post">
+            <div class="input">
+                <label for="title"></label>
+                <input type="text" id="title" name="title">                
+            </div>
+            <div class="input">
+                <label> for="author"Author</label>
+                <input type="text" id="author" name="author">
+                <button type="submit">INSERT</button>                
+            </div>
+        </form>        
+    </section>
+    <section class="get">
+        <h3>Get Data</h3>
+        <a href="/get-data">LOAD DATA</a>
+        <div>
+            {{# each items}}
+                <article class="item">
+                    <div>Title: {{this.title}}</div>
+                    <div>Content: {{this.content}}</div>
+                    <div>Author: {{this.author}}</div>
+                    <div>ID: {{this._id}}</div>
+                    
+                </article>
+            {{/each}}
+        </div>        
+    </section>
+</body>
+</html>
